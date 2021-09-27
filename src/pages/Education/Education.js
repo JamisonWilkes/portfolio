@@ -25,6 +25,22 @@ const Education = ({ user }) => {
             </EducationItem>
           ))}
         </ul>
+        <ul>
+          {user.certificates.map((certificates, i) => (
+            <EducationItem key={i}>
+              <div>
+                <Degree>
+                  {certificates.name}, {certificates.issuer}
+                </Degree>
+                <span> &sdot; </span>
+                <span>
+                  {certificates.date}
+                </span>
+              </div>
+              <Paragraph>{certificates.summary}</Paragraph>
+            </EducationItem>
+          ))}
+        </ul>
       </div>
     </Layout>
   );
